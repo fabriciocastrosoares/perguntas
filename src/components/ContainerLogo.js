@@ -2,10 +2,12 @@ import styled from "styled-components";
 import logo from "../assets/logo.png";
 import Rodape from "../components/Rodape";
 import Cartas from "./Cartas";
+import { useState } from "react";
 
 
 export default function ContainerLogo({cards}){
-    
+    const[contConcluidos, setContConcluidos] = useState(0);
+
     return(
         <>
             <ContainerPrincipal>
@@ -13,9 +15,9 @@ export default function ContainerLogo({cards}){
                     <img src={logo} alt="logo" />
                     <h1>Perguntas</h1>
                 </LogoNome>
-                <Cartas cards = {cards}/>
+                <Cartas cards = {cards} contConcluidos = {contConcluidos} setContConcluidos = {setContConcluidos}/>
             
-                <Rodape cards = {cards}/>
+                <Rodape cards = {cards} contConcluidos = {contConcluidos}/>
             </ContainerPrincipal>
         </>
     );

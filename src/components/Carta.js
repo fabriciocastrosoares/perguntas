@@ -1,49 +1,30 @@
-import styled from "styled-components";
 import play from "../assets/seta_play.png";
 import { useState } from "react";
+import Cardinicio from "../cards/Cardinicio";
+import CardPerguntas from "../cards/Cardperguntas";
+import Cardrespostas from "../cards/Cardrespostas";
 
 
-export default function Carta({i}){
+export default function Carta({c, i, contConcluidos, setContConcluidos}){
     
-    const [mostrarPergunta, setMostrarpergunta] = useState(false);
-    function exibirPergunta(){
-        console.log("aaaa");
-        setMostrarpergunta(true);
-    } 
+    const [mostrarPergunta, setMostrarPergunta] = useState(false);
+    const [mostrarResposta, setMostrarResposta] = useState(false);
+    const [clicado, setClicado] = useState(false);
+    const [imagemInicio, setImagemInicio] = useState(play);
 
-    
     return(
-        <Pergunta $mostrarPergunta = {mostrarPergunta}>
-            <p>Pergunta {i+1}</p>
-            <img onClick={exibirPergunta} src={play} alt="play"/>
-        </Pergunta>
-    )
+        <>
+            {!mostrarPergunta ? (
+               <Cardinicio clicado = {clicado} imagemInicio = {imagemInicio}
+                            setMostrarPergunta = {setMostrarPergunta}
+                            setClicado = {setClicado} i = {i}/>)
+                    : 
+                        (!mostrarResposta ?
+                            (<CardPerguntas c = {c} setMostrarPergunta = {setMostrarPergunta} setMostrarResposta = {setMostrarResposta}/>)
+                                :
+                                    (<Cardrespostas c ={c} contConcluidos = {contConcluidos} setContConcluidos = {setContConcluidos} 
+                                                    setMostrarPergunta = {setMostrarPergunta}setImagemInicio = {setImagemInicio}/>)
+            )}
+        </>
+    );
 }
-
-
-
-const Pergunta = styled.div`
-    background-color: ${(props) => !props.$mostrarPergunta ? "#FFFFFF" : "#feffd3" };
-    width: 300px;
-    height: ${(props) => !props.$mostrarPergunta ? "65px" : "131px"};
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 12.5px;
-    margin-bottom: 12.5px;
-    P{
-        font-family: "Recursive", sans-serif;
-        font-weight: 700;
-        font-size: 16px;
-        margin-left: 15px;
-        color: #333333;
-    }
-    img{
-        width: 20px;
-        height: 23px;
-        margin-right: 15px;
-        cursor: pointer;
-    }
-
-`

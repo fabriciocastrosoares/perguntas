@@ -4,22 +4,22 @@ import play from "../assets/seta_play.png";
 import Carta from "./Carta";
 
 
-export default function Cartas({cards}){
-    console.log(cards);
-  
-
+export default function Cartas({cards, contConcluidos, setContConcluidos}){ 
     return(
-        
         <ContainerPerguntas>
             {cards.map((c, i) => 
                 <Carta 
                     key = {i}
-                    i = {i}/>)}
+                    i = {i}
+                    c ={c}
+                    contConcluidos = {contConcluidos}
+                    setContConcluidos = {setContConcluidos}/>
+                    )}
         </ContainerPerguntas>
     );
 }
 
-const ContainerPerguntas = styled.div`
+const ContainerPerguntas = styled.ul`
     width: 300px;
     background-color: FB6B6B;
     overflow-y: auto;

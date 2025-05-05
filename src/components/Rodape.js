@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-export default function Rodape({cards}){
+export default function Rodape({cards, contConcluidos}){
     return(
         <QuantidadeAcertos>
-            <p>0/{cards.length} CONCLUÍDOS</p>
+            <p>{contConcluidos}/{cards.length} CONCLUÍDOS</p>
         </QuantidadeAcertos>
     );
 }
