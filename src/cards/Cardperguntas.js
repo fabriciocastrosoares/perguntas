@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import virar from "../assets/seta_virar.png";
 
-export default function CardPerguntas({c, setMostrarPergunta, setMostrarResposta}){ 
+export default function CardPerguntas({c, setMostrarResposta}){ 
         return(
             <Pergunta>
                 <p>{c.question}</p>

@@ -1,17 +1,17 @@
 import styled from "styled-components";
-export default function Cardinicio({i, clicado, imagemInicio, setMostrarPergunta, setClicado}){ 
+export default function Cardinicio({i, clicado, imagemInicio, setMostrarPergunta, setClicado, corDaPalavra}){ 
 
     function exibirPergunta(){
         if(clicado) return;
         setMostrarPergunta(true);
         setClicado(true);
     }
-
+   
     return(
-        <Inicio $clicado = {clicado}>
-        <p>Pergunta {i + 1}</p>
-        <img onClick={exibirPergunta} src={imagemInicio} alt="play" />
-    </Inicio>
+        <Inicio $clicado = {clicado} $corDaPalavra = {corDaPalavra}>
+            <p>Pergunta {i + 1}</p>
+            <img onClick={exibirPergunta} src={imagemInicio} alt="play" />
+        </Inicio>
     );
 }
 
@@ -30,11 +30,11 @@ const Inicio = styled.li`
         font-weight: 700;
         font-size: 16px;
         margin-left: 15px;
-        color: ${(props) => (!props.$clicado ? "#333333" : "#FF3030")};
+        color: ${(props) => (props.$clicado ? props.$corDaPalavra : "")};
         text-decoration: ${(props) => (props.$clicado ? "line-through" : "")};
     }
     img{
-        width: ${(props) => !props.$clicado ? "20px" : "23px"};
+        width: ${(props) => (!props.$clicado ? "20px" : "23px")};
         height: 23px;
         margin-right: 15px;
         cursor: pointer;

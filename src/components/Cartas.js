@@ -1,10 +1,8 @@
 import styled from "styled-components";
-import play from "../assets/seta_play.png";
-
 import Carta from "./Carta";
 
 
-export default function Cartas({cards, contConcluidos, setContConcluidos}){ 
+export default function Cartas({cards, contConcluidos, setContConcluidos, imagensRodape, setImagensRodape}){ 
     return(
         <ContainerPerguntas>
             {cards.map((c, i) => 
@@ -13,7 +11,9 @@ export default function Cartas({cards, contConcluidos, setContConcluidos}){
                     i = {i}
                     c ={c}
                     contConcluidos = {contConcluidos}
-                    setContConcluidos = {setContConcluidos}/>
+                    setContConcluidos = {setContConcluidos}
+                    imagensRodape = {imagensRodape}
+                    setImagensRodape = {setImagensRodape}/>
                     )}
         </ContainerPerguntas>
     );

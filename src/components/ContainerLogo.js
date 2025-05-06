@@ -7,17 +7,18 @@ import { useState } from "react";
 
 export default function ContainerLogo({cards}){
     const[contConcluidos, setContConcluidos] = useState(0);
+    const [imagensRodape, setImagensRodape] = useState([]);
 
     return(
         <>
-            <ContainerPrincipal>
+            <ContainerPrincipal> 
                 <LogoNome>
                     <img src={logo} alt="logo" />
                     <h1>Perguntas</h1>
                 </LogoNome>
-                <Cartas cards = {cards} contConcluidos = {contConcluidos} setContConcluidos = {setContConcluidos}/>
+                <Cartas cards = {cards} contConcluidos = {contConcluidos} setContConcluidos = {setContConcluidos} imagensRodape = {imagensRodape} setImagensRodape = {setImagensRodape}/>
             
-                <Rodape cards = {cards} contConcluidos = {contConcluidos}/>
+                <Rodape cards = {cards} contConcluidos = {contConcluidos} imagensRodape = {imagensRodape}/>
             </ContainerPrincipal>
         </>
     );

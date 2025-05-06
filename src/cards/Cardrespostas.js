@@ -3,7 +3,7 @@ import certo from "../assets/icone_certo.png";
 import errado from "../assets/icone_erro.png";
 import quase from "../assets/icone_quase.png";
 
-export default function Cardrespostas({c, contConcluidos, setContConcluidos, setMostrarPergunta, setImagemInicio}){
+export default function Cardrespostas({c, contConcluidos, setContConcluidos, setMostrarPergunta, setImagemInicio, setCorDaPalavra, imagensRodape, setImagensRodape}){
 
     function responder(event){
         let novoCont = contConcluidos + 1;
@@ -13,10 +13,16 @@ export default function Cardrespostas({c, contConcluidos, setContConcluidos, set
         const textoBotao = event.target.textContent;
         if(textoBotao === "Zap!"){
             setImagemInicio(certo);
+            setCorDaPalavra("#2FBE34");
+            setImagensRodape([... imagensRodape, certo]);
         }else if(textoBotao === "Quase não lembrei"){
             setImagemInicio(quase);
+            setCorDaPalavra("#FF922E");
+            setImagensRodape([...imagensRodape, quase]);
         }else{
             setImagemInicio(errado);
+            setCorDaPalavra("#FF3030");
+            setImagensRodape([...imagensRodape, errado]);
         }
     }
 
