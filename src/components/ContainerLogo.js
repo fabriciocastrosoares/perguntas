@@ -5,9 +5,7 @@ import Cartas from "./Cartas";
 import { useState } from "react";
 import BonusRodapeP from "./BonusRodapeP";
 import BonusRodapeF from "./BonusRodapeF";
-import certo from "../assets/icone_certo.png";
 import errado from "../assets/icone_erro.png";
-import quase from "../assets/icone_quase.png";
 
 
 export default function ContainerLogo({cards}){
@@ -38,7 +36,6 @@ const ContainerPrincipal = styled.div`
     height: 667px;
     background-color: #FB6B6B ;
     margin: auto;
-    margin-top: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -1,14 +1,6 @@
 import styled from "styled-components";
 
 export default function Rodape({cards, contConcluidos, imagensRodape}){
-    // const [fraseFinal, setFraseFinal] = useState(false);
-
-    // if(contConcluidos === 8){
-    //     if(imagensRodape.includes(errado)){
-    //         setFraseFinal(true);
-    //     }
-        
-    // }
     
     return(
         <QuantidadeAcertos>

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 export default function Cardinicio({i, clicado, imagemInicio, setMostrarPergunta, setClicado, corDaPalavra}){ 
 
     function exibirPergunta(){
