@@ -11,6 +11,7 @@ export default function Cardrespostas({c, contConcluidos, setContConcluidos, set
         setContConcluidos(novoCont);
 
         const textoBotao = event.target.textContent;
+        
         if(textoBotao === "Zap!"){
             setImagemInicio(certo);
             setCorDaPalavra("#2FBE34");

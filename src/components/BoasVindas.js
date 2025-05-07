@@ -3,15 +3,12 @@ import logo from "../assets/logo.png";
 
 
 export default function BoasVindas({setEntrar}){
-    function iniciar(){
-        setEntrar(true);
-    }
 
     return(
         <TelaInicial>
             <img src = {logo} alt = "logo" />
             <h1>Perguntas</h1>
-            <BotaoEntrar onClick={iniciar}>Iniciar Perguntas!</BotaoEntrar>
+            <BotaoEntrar onClick={() => setEntrar(true)}>Iniciar Perguntas!</BotaoEntrar>
         </TelaInicial>
     );
 }

@@ -3,6 +3,11 @@ import logo from "../assets/logo.png";
 import Rodape from "../components/Rodape";
 import Cartas from "./Cartas";
 import { useState } from "react";
+import BonusRodapeP from "./BonusRodapeP";
+import BonusRodapeF from "./BonusRodapeF";
+import certo from "../assets/icone_certo.png";
+import errado from "../assets/icone_erro.png";
+import quase from "../assets/icone_quase.png";
 
 
 export default function ContainerLogo({cards}){
@@ -11,14 +16,18 @@ export default function ContainerLogo({cards}){
 
     return(
         <>
-            <ContainerPrincipal> 
+            <ContainerPrincipal $contConcluidos = {contConcluidos}> 
                 <LogoNome>
                     <img src={logo} alt="logo" />
                     <h1>Perguntas</h1>
                 </LogoNome>
                 <Cartas cards = {cards} contConcluidos = {contConcluidos} setContConcluidos = {setContConcluidos} imagensRodape = {imagensRodape} setImagensRodape = {setImagensRodape}/>
             
-                <Rodape cards = {cards} contConcluidos = {contConcluidos} imagensRodape = {imagensRodape}/>
+                {contConcluidos < 8 ? (<Rodape cards = {cards} contConcluidos = {contConcluidos} imagensRodape = {imagensRodape}/>)
+                    :
+                        (!imagensRodape.includes(errado) ? (<BonusRodapeP cards = {cards} contConcluidos = {contConcluidos} imagensRodape = {imagensRodape} />) 
+                            :
+                                (<BonusRodapeF cards = {cards} contConcluidos = {contConcluidos} imagensRodape = {imagensRodape} />))}
             </ContainerPrincipal>
         </>
     );
@@ -37,7 +46,7 @@ const ContainerPrincipal = styled.div`
     border: 1px  solid #DBDBDB;
     position: relative;
     padding-top: 42px;
-    padding-bottom: 70px;
+    padding-bottom: ${(props) => props.$contConcluidos !== 8 ? "70px" : "171px"};
 `
 const LogoNome = styled.div`
     width: 255.61px;

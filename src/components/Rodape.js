@@ -1,12 +1,17 @@
 import styled from "styled-components";
 
-import BonusRodape from "./BonusRodape";
-
 export default function Rodape({cards, contConcluidos, imagensRodape}){
+    // const [fraseFinal, setFraseFinal] = useState(false);
+
+    // if(contConcluidos === 8){
+    //     if(imagensRodape.includes(errado)){
+    //         setFraseFinal(true);
+    //     }
+        
+    // }
     
     return(
         <QuantidadeAcertos>
-           <BonusRodape />
             <p>{contConcluidos}/{cards.length} CONCLUÍDOS</p>
             <ImagensAcerto>{imagensRodape.map((imagens, index) => <img key={index} src = {imagens} alt = "imagens"/>)}</ImagensAcerto>
         </QuantidadeAcertos>
@@ -18,7 +23,7 @@ export default function Rodape({cards, contConcluidos, imagensRodape}){
 const QuantidadeAcertos = styled.div`
     background-color: #ffffff;
     width: 375px;
-    height: 171px;
+    height: 70px;
     margin: auto;
     display: flex;
     flex-direction: column;
