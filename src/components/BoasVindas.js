@@ -17,7 +17,6 @@ const TelaInicial = styled.div`
     background-color: #FB6B6B;
     width: 375px;
     height: 667px;
-    margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -35,7 +35,6 @@ const ContainerPrincipal = styled.div`
     width: 375px;
     height: 667px;
     background-color: #FB6B6B ;
-    margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
