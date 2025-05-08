@@ -19,7 +19,8 @@ export default function ContainerLogo({cards}){
                     <img src={logo} alt="logo" />
                     <h1>Perguntas</h1>
                 </LogoNome>
-                <Cartas cards = {cards} contConcluidos = {contConcluidos} setContConcluidos = {setContConcluidos} imagensRodape = {imagensRodape} setImagensRodape = {setImagensRodape}/>
+                <Cartas cards = {cards} contConcluidos = {contConcluidos} setContConcluidos = {setContConcluidos} 
+                        imagensRodape = {imagensRodape} setImagensRodape = {setImagensRodape}/>
             
                 {contConcluidos < 8 ? (<Rodape cards = {cards} contConcluidos = {contConcluidos} imagensRodape = {imagensRodape}/>)
                     :
@@ -35,12 +36,17 @@ const ContainerPrincipal = styled.div`
     width: 375px;
     height: 667px;
     background-color: #FB6B6B ;
+    margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
     border: 1px  solid #DBDBDB;
-    position: relative;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 1;
     padding-top: 42px;
     padding-bottom: ${(props) => props.$contConcluidos !== 8 ? "70px" : "171px"};
 `

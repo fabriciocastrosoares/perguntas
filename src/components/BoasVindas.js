@@ -17,9 +17,15 @@ const TelaInicial = styled.div`
     background-color: #FB6B6B;
     width: 375px;
     height: 667px;
+    margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 1;
     img{
         width: 136px;
         height: 161px;
@@ -49,6 +55,7 @@ const BotaoEntrar = styled.button`
     line-height: 100%;
     border-radius: 5px;
     border: 1px solid #D70900;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     
     margin-top: 30px;
     cursor: pointer;
